@@ -21,17 +21,19 @@ Dataset ini terdiri dari beberapa variabel berikut:
 7. Home Ownership  
 8. Credit Score  
 
+Untuk keperluan analisis ini, hanya 100 data pertama dari dataset yang digunakan guna menyederhanakan proses dan visualisasi.
+
 ## Temuan dan Insight
-Setelah dilakukan pelatihan menggunakan model Perceptron, diperoleh akurasi sekitar **84%** pada data uji. Di antara fitur input, pendapatan (*Income*) memiliki pengaruh yang relatif lebih tinggi dibandingkan usia dan jumlah anak.
+Setelah dilakukan pelatihan menggunakan model Perceptron, diperoleh akurasi sekitar **83%** pada data uji. Di antara fitur input, pendapatan (*Income*) memiliki pengaruh yang relatif lebih tinggi dibandingkan usia dan jumlah anak.
 
 Model Perceptron secara internal menggunakan pendekatan *One-vs-Rest (OvR)* dalam menangani klasifikasi multikelas, yaitu membangun satu model untuk masing-masing kelas terhadap kelas lainnya. Meskipun termasuk model linier sederhana, Perceptron mampu memberikan hasil yang cukup baik pada dataset ini, membuktikan bahwa model dengan kompleksitas rendah tetap relevan dalam konteks data terstruktur.
 
 ## Penjelasan Dukungan AI
-Dalam proyek ini, *Large Language Model (LLM)* seperti **IBM Granite 3.3 8B Instruct** digunakan untuk mendukung berbagai proses analisis di dalam lingkungan Google Colab. Pemanfaatan LLM dilakukan secara aktif untuk:
-
-1. Meringkas data pendapatan (*income*) berdasarkan kategori *Credit Score*, guna mendapatkan pemahaman statistik awal dari tiap kelas skor kredit.
-2. Menggambarkan profil demografis (rata-rata usia, jenis kelamin dominan, persentase status pernikahan, dan persentase kepemilikan rumah) untuk masing-masing kategori *Credit Score* secara deskriptif.
-3. Membangun dan mengevaluasi model klasifikasi Perceptron, termasuk proses *encoding* target, pembagian data *train-test* yang seimbang berdasarkan kategori (*stratified split*), pelatihan model, hingga pelaporan hasil seperti akurasi, bobot (koefisien), dan bias.
+Dalam proyek ini, *Large Language Model* (LLM) seperti IBM Granite 3.3 8B Instruct digunakan secara aktif di dalam lingkungan Google Colab untuk mendukung berbagai tahapan analisis data dan pemodelan. Berikut adalah bentuk-bentuk dukungan yang diberikan:
+1. Perhitungan Statistik Deskriptif, LLM digunakan untuk menghitung statistik deskriptif dari variabel Income berdasarkan kategori Credit Score, termasuk nilai rata-rata, maksimum, minimum, varians, dan rentang. LLM menghasilkan ringkasan hasil dalam format tabel HTML atau daftar, tanpa menunjukkan langkah-langkah perhitungannya.
+2. Visualisasi Data dengan Histogram, LLM menghasilkan skrip Python untuk membuat histogram distribusi Income yang dikelompokkan berdasarkan Credit Score. Selanjutnya, agent berbasis LLM juga digunakan untuk langsung menampilkan histogram menggunakan seaborn dan matplotlib, sesuai permintaan pengguna.
+3. Profil Demografis Berdasarkan Skor Kredit, LLM diminta untuk menganalisis dan menyajikan profil demografis berdasarkan kategori Credit Score, mencakup usia rata-rata, jenis kelamin paling umum, persentase individu yang sudah menikah, dan persentase kepemilikan rumah. Hasil ditampilkan dalam format tabel yang ringkas.
+4. Pemodelan Klasifikasi Perceptron, LLM menghasilkan skrip klasifikasi menggunakan model Perceptron dari scikit-learn. Tahapan yang dilakukan mencakup encoding target menggunakan LabelEncoder, pembagian data secara stratified (80:20), pelatihan model dengan parameter default (termasuk class_weight='balanced'), dan evaluasi akurasi. LLM juga merangkum hasil akhir yang berupa parameter model, akurasi, koefisien (bobot), dan intersep untuk tiap kelas
 
 Penggunaan LLM dalam proyek ini memungkinkan proses analisis menjadi lebih cepat, terstruktur, dan efisien, terutama dalam merangkum data dan mengotomatisasi interpretasi hasil model.
 
