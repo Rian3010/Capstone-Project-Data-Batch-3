@@ -35,7 +35,7 @@ Dalam proyek ini, *Large Language Model* (LLM) seperti IBM Granite 3.3 8B Instru
 3. **Profil Demografis Berdasarkan Skor Kredit**, LLM diminta untuk menganalisis dan menyajikan profil demografis berdasarkan kategori Credit Score, mencakup usia rata-rata, jenis kelamin paling umum, persentase individu yang sudah menikah, dan persentase kepemilikan rumah. Hasil ditampilkan dalam format tabel yang ringkas.
 4. **Pemodelan Klasifikasi Perceptron**, LLM menghasilkan skrip klasifikasi menggunakan model Perceptron dari scikit-learn. Tahapan yang dilakukan mencakup encoding target menggunakan LabelEncoder, pembagian data secara stratified (80:20), pelatihan model dengan parameter default (termasuk class_weight='balanced'), dan evaluasi akurasi. LLM juga merangkum hasil akhir yang berupa parameter model, akurasi, koefisien (bobot), dan intersep untuk tiap kelas
 
-Penggunaan LLM dalam proyek ini memungkinkan proses analisis menjadi lebih cepat, terstruktur, dan efisien, terutama dalam merangkum data dan mengotomatisasi interpretasi hasil model.
+Secara keseluruhan, LLM membantu mempercepat proses, menyusun hasil secara rapi, dan mengotomatisasi interpretasi, meskipun tetap perlu kehati-hatian dalam hal keakuratan numerik.
 
 ## Penutup
 Proyek ini menunjukkan bahwa integrasi antara teknik klasik *machine learning* dan pemanfaatan LLM dapat mempercepat proses analisis data serta menghasilkan model klasifikasi yang sederhana namun efektif. Pendekatan ini memperlihatkan potensi kolaborasi manusia dan AI dalam menyelesaikan permasalahan nyata secara efisien dan akurat.
