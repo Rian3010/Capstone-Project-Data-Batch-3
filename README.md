@@ -1,4 +1,4 @@
-# KLASIFIKASI DATA CREDIT SCORE
+# KLASIFIKASI DATA CREDIT SCORE DENGAN IBM GRANITE
 **Capstone Project - Hacktiv8 x IBM**
 
 ## Deskripsi Proyek
